@@ -18,13 +18,16 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', () => {
     const galleryContainer = document.getElementById('gallery-container');
     const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('.theme-icon');
 
     // Theme switcher logic
     const updateThemeButton = () => {
         if (document.body.classList.contains('dark-mode')) {
-            themeToggle.textContent = 'Aktifkan Mode Terang';
+            themeIcon.textContent = '🌙'; // Moon icon for dark mode
+            themeToggle.setAttribute('aria-label', 'Aktifkan Mode Terang');
         } else {
-            themeToggle.textContent = 'Aktifkan Mode Gelap';
+            themeIcon.textContent = '☀️'; // Sun icon for light mode
+            themeToggle.setAttribute('aria-label', 'Aktifkan Mode Gelap');
         }
     };
 
@@ -33,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentTheme) {
         document.body.classList.add(currentTheme);
     }
-    updateThemeButton();
+    updateThemeButton(); // Initial update of button icon and aria-label
 
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             theme = 'dark-mode';
         }
         localStorage.setItem('theme', theme);
-        updateThemeButton();
+        updateThemeButton(); // Update icon and aria-label after toggle
     });
 
     // Dynamic gallery logic

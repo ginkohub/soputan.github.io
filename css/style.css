@@ -53,10 +53,23 @@ header {
     background-color: var(--button-bg);
     color: var(--button-text);
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    width: 40px; /* Lebar dan tinggi yang sama untuk membuatnya lingkaran */
+    height: 40px;
+    border-radius: 50%; /* Membuat tombol menjadi lingkaran */
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem; /* Ukuran ikon */
+    position: absolute; /* Posisikan secara absolut untuk penempatan yang fleksibel */
+    right: 2rem; /* Sesuaikan posisi sesuai kebutuhan */
+    top: 50%; /* Pusatkan secara vertikal */
+    transform: translateY(-50%); /* Penyesuaian untuk pemusatan vertikal */
+}
+
+.theme-icon {
+    line-height: 1;
 }
 
 .header-hidden {
