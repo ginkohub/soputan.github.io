@@ -62,12 +62,12 @@ header {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    position: fixed; /* Changed to fixed position */
+    position: fixed;
     right: 2rem;
-    bottom: 2rem; /* Positioned at the bottom */
-    top: auto; /* Remove top positioning */
-    transform: none; /* Remove transform for vertical centering */
-    z-index: 1001; /* Ensure it floats above other content */
+    bottom: 2rem;
+    top: auto;
+    transform: none;
+    z-index: 1001;
 }
 
 .theme-icon {
@@ -240,7 +240,6 @@ footer {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     #hero h2 {
         font-size: 2rem;
